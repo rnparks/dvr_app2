@@ -1,12 +1,12 @@
 DROP DATABASE IF EXISTS dvr_app_development;
 CREATE DATABASE dvr_app_development;
-\c dvr_app2_development
+\c dvr_app_development
 
-DROP TABLE IF EXISTS stations;
-DROP TABLE IF EXISTS series;
-DROP TABLE IF EXISTS episodes;
-DROP TABLE IF EXISTS recordings;
-DROP TABLE IF EXISTS viewers;
+DROP TABLE IF EXISTS stations CASCADE;
+DROP TABLE IF EXISTS series CASCADE;
+DROP TABLE IF EXISTS episodes CASCADE;
+DROP TABLE IF EXISTS recordings CASCADE;
+DROP TABLE IF EXISTS viewers CASCADE;
 
 CREATE TABLE stations (
   id           serial       PRIMARY KEY,
