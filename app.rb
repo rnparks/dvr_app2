@@ -32,8 +32,20 @@ class App < ApplicationController
   end
 
   # viewer SHOW
+
+  get('/viewer/new') do
+    render(:erb, :'viewers/new')
+  end
+
+  post('/viewer') do
+    Viewer.create(name: params[:name])
+    redirect to('/')
+  end
+
+
   get('/viewer/:id') do
     @viewer = Viewer.find(id: params[:id])
-    render(:erb, :'viewer/show')
+    render(:erb, :'viewers/show')
   end
+
 end
